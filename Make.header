@@ -1,0 +1,89 @@
+# Edit this file to define constants and custom build targets.
+# Please refer to the makemake documentation for more information.
+#
+# To compile multiple versions of a program or library, please study
+#     http://www.its.caltech.edu/~jafl/jcc/multi_version.html
+
+# Useful directories
+
+INSTALL_DIR	:=	/usr/local
+
+MYCODEDIR := ./src
+
+# Directories to search for header files
+
+SEARCHDIRS := -I- -I${MYCODEDIR} -I/usr/X11R6/include
+
+# makemake variables
+
+DEPENDFLAGS := -g -Wall  ${SEARCHDIRS}
+
+# C preprocessor (C, C++, FORTRAN)
+
+CPPFLAGS = 
+
+# C compiler
+
+CC     := gcc
+CFLAGS  = ${DEPENDFLAGS}
+
+%.o : %.c
+	${CC} ${CPPFLAGS} ${CFLAGS} -c $< -o $@
+
+# C++ compiler
+
+CXX      := c++
+CXXFLAGS  = ${DEPENDFLAGS}
+
+%.o : %.cc
+	${CXX} ${CPPFLAGS} ${CXXFLAGS} -c $< -o $@
+
+%.o : %.C
+	${CXX} ${CPPFLAGS} ${CXXFLAGS} -c $< -o $@
+
+%.o : %.cpp
+	${CXX} ${CPPFLAGS} ${CXXFLAGS} -c $< -o $@
+
+%.o : %.cxx
+	${CXX} ${CPPFLAGS} ${CXXFLAGS} -c $< -o $@
+
+# FORTRAN compiler
+
+FC     := f77
+FFLAGS  = 
+
+# C/C++/Eiffel/FORTRAN linker
+
+LINKER    := gcc
+LDFLAGS    = -L/usr/X11R6/lib
+LOADLIBES := -lXpm -lXext -lX11 -lm 
+
+# Java compiler
+
+JAVAC  := javac
+JFLAGS  = 
+JAR    := jar
+
+%.class : %.java
+	${JAVAC} ${JFLAGS} $<
+
+.PHONY	:	default	
+defult::	all
+
+
+# Installation
+.PHONY	:	install
+install:	
+	@chmod a+x			hazewm
+	@chmod a+x			starthaze
+	@cp -f hazewm		$(INSTALL_DIR)/bin/
+	@cp -f starthaze	$(INSTALL_DIR)/bin/
+	@mkdir -p			$(INSTALL_DIR)/share/haze
+	@cp -f pixmap/*		$(INSTALL_DIR)/share/haze
+
+
+.PHONY	:	uninstall
+uninstall:	
+	@rm -f				$(INSTALL_DIR)/bin/hazewm
+	@rm -f -R			$(INSTALL_DIR)/share/haze
+

@@ -1,0 +1,302 @@
+####################
+## Windows Layout
+####################
+
+## Colors
+# Classic HaZe
+#TITLE_ACTIVE_FG		white
+#TITLE_ACTIVE_BG		black
+#TITLE_INACTIVE_FG		gray
+#TITLE_INACTIVE_BG		white
+#DECORATIONS_ACTIVE_FG		white
+#DECORATIONS_ACTIVE_BG		black
+#DECORATIONS_INACTIVE_FG	gray
+#DECORATIONS_INACTIVE_BG	black
+
+# Orange
+#TITLE_ACTIVE_FG			black
+#TITLE_ACTIVE_BG			orange
+#TITLE_INACTIVE_FG		black
+#TITLE_INACTIVE_BG		gray
+#DECORATIONS_ACTIVE_FG		black
+#DECORATIONS_ACTIVE_BG		orange
+#DECORATIONS_INACTIVE_FG		black
+#DECORATIONS_INACTIVE_BG		gray
+
+# Green
+#TITLE_ACTIVE_FG		green
+#TITLE_ACTIVE_B			black
+#TITLE_INACTIVE_FG		forest green
+#TITLE_INACTIVE_BG		black
+#DECORATIONS_ACTIVE_FG		green
+#DECORATIONS_ACTIVE_BG		black
+#DECORATIONS_INACTIVE_FG	forest gren
+#DECORATIONS_INACTIVE_BG	black
+
+
+
+## Number of Desktop
+Desktopnum	6
+
+## Follow mouse activation of window
+#FollowToMouse
+
+## Follow mouse activation of window but when mouse go into root window,
+## active window is not changed
+#SloppyFocus
+
+## Shaded window is all desktop
+StickyShade
+
+## Displayed selected window at current desktop,
+## when window is not mapped.
+#StickyHide
+
+## Interval and number of flush at flushing menu
+#FlushMenu 100 2
+
+## Map iconify window as shade 
+IconifyShade
+
+## Map window as hide when window is mapped as icon
+IconifyHide
+
+## Show the window as shade, when hide shaded window is shown
+#ShadeMap
+
+## Enable Opaque Move
+#OpaqueMove
+
+## Enable Opaque Resize
+# OpaqueResize
+
+## Enable one click menu
+OneClickMenu
+
+# Double click time
+DoubleClickTime 300
+
+# Edge resistance force
+EdgeResistance 50 50
+
+## Show window name with desktop number on window list
+DisplayDeskNumber
+
+## Draw move/resize line with dotted line
+Compatible
+
+####################
+## from mlvwm
+####################
+## Enable MacOS 8 decoration feauture
+#System8
+Style "*" NormalDecoration
+END
+
+####################
+## Icon Search Path
+####################
+IconPath /usr/local/share/haze:/usr/local/include/X11/pixmaps:/usr/share/pixmaps:/usr/share/icons:/usr/share/icons/mini
+
+####################
+##   Menu Icon
+####################
+IconMenuIcon jx.xpm
+
+####################
+## Another old 
+## mlvwm feature
+####################
+# Balloon help Settings
+#UseBalloon "Show Balloon Help" "Hide Balloon Help", Icon jx.xpm
+
+
+####################
+##     Fonts
+####################
+# Font Settings(without LOCALE)
+# The default font
+#MenuBarFont -*-*-medium-i-normal-*-16-*-*-*-*-*-iso8859-*
+#MenuFont -*-*-medium-i-normal-*-16-*-*-*-*-*-iso8859-*
+#TitleBarFont -*-*-medium-i-normal-*-16-*-*-*-*-*-iso8859-*
+#BalloonFont -*-*-medium-i-normal-*-16-*-*-*-*-*-iso8859-*
+
+# My favourite font, best viewed with 1024x768 & 1280x1024
+MenuBarFont -b&h-lucidatypewriter-bold-r-normal-*-17-*-*-*-m-*-iso8859-*
+MenuFont -b&h-lucidatypewriter-bold-r-normal-*-17-*-*-*-m-*-iso8859-*
+TitleBarFont -b&h-lucidatypewriter-bold-r-normal-*-17-*-*-*-m-*-iso8859-*
+
+# Another pretty good font
+#MenuBarFont -biznet-fotinostypewriter-bold-r-normal-*-17-*-*-*-*-*-iso8859-*
+#MenuFont -biznet-fotinostypewriter-bold-r-normal-*-17-*-*-*-*-*-iso8859-*
+#TitleBarFont -biznet-fotinostypewriter-bold-r-normal-*-17-*-*-*-*-*-iso8859-*
+
+####################
+## Shortcuts...
+## from mlvwm
+####################
+# Settings of keyborad short cut
+ShortCut
+Up	C	Desk -
+Down	C	Desk +
+Left    C       PreviousWindow
+Right   C       NextWindow
+Left    M       PreviousSameDeskWindow
+Right   M       NextSameDeskWindow
+Escape  M       Restart mlvwm
+Escape  SM      Exit 
+END
+
+####################
+##    The Menu
+####################
+
+Menu def-Window, Icon mini-haze.xpm, Stick
+"About..." Icon mini-haze.xpm, Action Exec "splash" exec splash /usr/local/share/haze/splash.xpm sleep 5s
+"Move" Icon mini-move.xpm, Action MoveWindow
+"Resize" Icon mini-resize.xpm, Action ResizeWindow
+#"Toggle Scroll" Action ToggleScroll
+"" NonSelect
+"xKill" Icon mini-bomb.xpm, Action Exec "xkill" exec xkill 
+END
+
+Menu def-File, Label "File", Left
+"XFTree     " Icon kfm.xpm, Action Exec "xftree" exec xftree
+"Rxvt       "	Icon defaultterm.xpm, Action Exec "rxvt" exec rxvt
+"Xterm      "	Icon defaultterm.xpm, Action Exec "xterm" exec xterm
+"Xedit      "  Icon text.xpm, Action Exec "xedit" exec xedit
+"Editor     "  Icon text.xpm, Action Exec "gedit" exec gedit
+END
+
+Menu def-Multimedia
+"XMMS       " Icon haze-sound.xpm, Action Exec "xmms" exec xmms
+"XMixer     " Icon mixer.xpm, Action Exec "xmixer" exec xmixer
+END
+
+Menu def-Applications, Label "Applications"
+"StarOffice " Icon staroffice2.xpm, Action Exec "soffice" exec office52/soffice
+"The Gimp   " Icon wilber.xpm, Action Exec "gimp" exec gimp
+"GQview     " Icon eyecon.xpm, Action Exec "gqview" exec gqview
+"XV         " Icon xv.xpm, Action Exec "xv" exec xv
+"Multimedia " SubMenu def-Multimedia
+END
+
+Menu def-Net, Label "Net"
+"Netscape Navigator   " Icon Netscape.xpm, Action Exec "netscape" exec netscape
+"Netscape Messenger   " Icon korn.xpm, Action Exec "netscape" exec netscape -mail
+"gFTP                 " Icon ftp.xpm, Action Exec "gtpf" exec gftp
+END
+
+Menu start-sub
+"Gnome Panel  " Icon gnome-logo.xpm, Action Exec "panel" exec panel
+END
+
+Menu def-Special, Label "Special"
+"Clean Up Desktop   " Icon Recycler.xpm,Action Refresh
+"" NonSelect
+"Mount   CDRom" Icon mountcd.xpm, Action Exec "xfmountdev" exec mount /mnt/cdrom
+"UnMount CDRom" Icon umountcd.xpm, Action Exec "xfmountdev" exec umount /mnt/cdrom
+"" NonSelect
+"Start" SubMenu start-sub
+"Configure" Icon kblackbox.xpm, Action Exec "xedit" exec xedit .hazerc
+"Restart" Icon ComputerPC.xpm, Action Restart zenwm
+"" NonSelect
+"Shutdown HaZe" Icon kcmx.xpm, Action Exit
+END
+
+
+####################
+##   Bar Addons
+####################
+# Swallow the application at menu
+#Swallow "XEyes"	Action Exec "xeyes" exec xeyes -geometry 100
+
+# Foreground=orange, change with new looks
+Swallow "xload"	Action Exec "xload" exec xload -geometry 100 -fg orange -bg black -nolabel -update 1
+
+Swallow "xosview" Action Exec "xosview" exec xosview  -captions -font 7x14 -geometry 150x25 -load -mem -page -ints -swap 
+
+Swallow "XClock" Action Exec "xclock" exec xclock -geometry 180x25 -font 7x14 -fg white -bg black -digital -padding 7 -update 1
+
+
+####################
+##  The Menu Bar
+####################
+
+# Definition MenuBar
+MenuBar default
+#def-Window
+def-File
+def-Applications
+def-Net
+def-Special
+END
+
+
+
+
+
+####################
+## Initial Function
+####################
+# Uncomment the "xterm" lines if needed
+
+InitFunction
+Desk 5
+Exec "xterm" xterm -ls -geometry 80x25 &
+Wait xterm
+#Exec "rxvt" rxvt &
+#Wait rxvt
+Desk 0
+Exec "xterm" xterm -ls -geometry 80x25 &
+Wait xterm
+#Exec "rxvt" rxvt &
+#Wait rxvt
+#Exec "xosview" xosview &
+#Wait xosview
+
+
+# Background color
+#Exec xsetroot -solid mediumpurple &
+#Exec xsetroot -solid skyblue4 &
+#Exec xsetroot -solid black &
+Exec xsetroot -solid steelblue4 &
+
+# Background image
+#Exec xsetbg -fullscreen -shrink -border black -onroot /usr/share/pixmaps/backgrounds/space/hst_antennae_9734a.jpg
+END
+
+
+####################
+## Restart Function
+####################
+RestartFunction
+END
+
+
+####################
+##     Style
+####################
+# Define the default window decoration
+Style
+"*" MiniIcon jx.xpm, MaxmizeScale 90, MenuBar default
+END
+
+# Old mlvwm style definitons
+Style
+#"Emacs" MiniIcon mini-edit.xpm
+#"xv" MiniIcon mini-xv.xpm, EnableScroll
+#"XCalc" MiniIcon mini-calc.xpm
+#"Xarchie" MiniIcon mini.xarchie.xpm
+#"Xmag" MiniIcon mini.xmag.xpm
+"XMeter" NoSBarH, NoSBarV, NoResizeR, NoMinMaxR, NoTitle, NoCloseR
+"XMeter" NoWinList, Sticky, SkipSelect
+"*biff" NoSBarH, NoSBarV, NoResizeR, NoMinMaxR, NoWinList, NoCloseR
+"XEyes"  NoSBarV, NoMinMaxR, NoSBarH, NoWinList 
+"XCal" NoSBarH, NoSBarV, NoResizeR, NoMinMaxR, NoWinList, NoCloseR
+"XConsole"  NoSBarH, NoSBarV, NoResizeR, NoTitle, NoWinList, SkipSelect
+END
+
+####################
+##    The End
+####################

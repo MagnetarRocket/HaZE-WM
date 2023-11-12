@@ -1,0 +1,40 @@
+xterm*background:	black
+xterm*foreground:	green
+xterm*cursorColor:	red
+xterm*pointerColor:	light sky blue
+xterm*font:		8x16
+xterm*saveLines:	2000
+xterm*scrollBar:	true
+
+rxvt*background:	black
+rxvt*foreground:	green
+rxvt*cursorColor:	red
+rxvt*pointerColor:	light sky blue
+rxvt*font:		8x16
+rxvt*saveLines:	2000
+rxvt*scrollBar:	true
+
+xiterm*background:	black
+xiterm*foreground:	green
+xiterm*cursorColor:	red
+xiterm*pointerColor:	light sky blue
+xiterm*font:		8x16
+xiterm*saveLines:	2000
+xiterm*scrollBar:	true
+
+xedit*background:	DodgerBlue3
+xedit*foreground:	white
+xedit*cursorColor:	red
+xedit*pointerColor:	light sky blue
+xedit*font:		8x16
+
+
+xosview*disk:		false
+xosview*cpuUserColor:	green
+xosview*cpuNiceColor:	white
+xosview*cpuSystemColor:	orange
+xosview*cpuFreeColor:	black
+xosview*meterLabelColor:white
+xosview*usedLabelColor:	SkyBlue
+
+

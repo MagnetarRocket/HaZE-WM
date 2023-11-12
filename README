@@ -1,0 +1,136 @@
+	
+	
+	
+	
+	because life is not in B&W...
+		HaZe 0.2
+	a real B&W window manager 
+	
+	
+
+v0.2
+
+-------------------
+    Overview
+-------------------
+
+HaZe is a hacked window manager based on mlvwm, the nice wm
+of Takac Hasegawa (hase@rop2.hitachi-cable.co.jp) with the
+MacOS appearance. mlvwm is based on Twm and fvwm.
+
+Provisionally, HaZe retains a lot of the mlvwm feature, so
+it should be very compatible with it. System8 doesn't work
+fine due to the radikal look of HaZe (!).
+
+-------------------
+   What's Haze?
+-------------------
+
+HaZe is robust, efficient and light weighted. Basic features
+HaZe provides are:
+
+	*Multiple virtual desktops
+	*Menu bar configurable
+	*Shaded windows
+	*Governed windows from the menu bar
+	*Small size of the code
+	*Are you thinking in anything else?
+
+-------------------
+ What is Haze not?
+-------------------
+
+HaZe like another wm (i.e. 9wm, wmx, wm2, etc) is designed
+for ascetic unix/linux users who launch their applications
+from the command line, but like some menu entries for the 
+most common tasks. Therefore, HaZe provides:
+
+	*No iconizing (shade it/hide it)
+	*No big files in your hard disk
+	*No memory and CPU time for unuseful tasks
+	*No libraries dependencies
+	*Anything else ?
+
+
+
+-------------------
+ At your own risk
+-------------------
+We don't assume all responsibility toward any situation
+which responded by the use of this window manager, either.
+No e-mail for bug report, requests or so... be pacient and
+wait for the next release or... repair the bug yourself.
+
+
+-------------------
+  Installation
+-------------------
+
+The default installation directory is /usr/local. HaZe will 
+create the /usr/local/share/haze directory for images and 
+icons and the binary in /usr/local/bin. If you need to change
+the root, please edit the Makefile and change the INSTALL_DIR
+variable to the right directory.
+
+Then, do
+
+	make
+	make install (as root)
+
+Copy the style/hazerc file to your home directory
+
+	cp -f style/hazerc $HOME/.hazerc
+	
+for configure the HaZe behaviour and the menu.
+
+
+If you want to be in the HaZe spirit, please add the entries 
+of the style/Xdefaults file to your own .Xdefaults. 
+
+
+-------------------
+  Running HaZe
+-------------------
+
+Execute  starthaze  from the command line.
+
+
+-------------------
+  More about HaZe
+-------------------
+
+Some applications that understand standard Xt command line
+arguments and X resources, like xterm and xfontsel, allow 
+the user to specify the start-up desk on the command line:
+
+            xterm -xrm "*Desk:1"
+
+will start an xterm on desk number 1. Not all applications 
+understand this option, however.
+
+The CONFIGURATION file describes how to configure HaZe from
+the .hazerc file. Please, review it.
+
+-------------------
+  Deinstallation
+-------------------
+
+	make uninstall
+	
+-------------------
+ Volunteers finded
+-------------------
+
+HaZe is maintened by argonaut_@yahoo.com but almost all 
+projects HELP will be very very apreciated. The idea is to
+begin a bigger project to develop HaZe much more. So, if
+you are interested, please let me know. 
+
+Feel free to hack the code and make changes...if you have
+some significative improvement send it to me.
+
+Thanks
+
+argonaut_@yahoo.com
+
+

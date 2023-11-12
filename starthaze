@@ -1,0 +1,14 @@
+# HAZE window manager
+echo "Starting HaZe window manager ..."
+
+mv -f $HOME/.xinitrc $HOME/.xinitrc.haze
+
+echo "xscreensaver -no-splash -lock-mode &" > $HOME/.xinitrc
+echo "exec hazewm" >> $HOME/.xinitrc
+
+startx
+
+rm -f $HOME/.xinitrc
+mv -f $HOME/.xinitrc.haze $HOME/.xinitrc
+
+# The End
